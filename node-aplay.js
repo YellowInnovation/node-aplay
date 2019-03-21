@@ -54,6 +54,7 @@ class Aplay extends EventEmitter
     /**
      * Play a WAV file
      * @param {String} filename WAV file to play
+     * @param {alsadevice} alsa device name, choose default device if null
      * @return {Aplay} return this instance
      */
     play(filename, alsadevice=null)
@@ -79,7 +80,7 @@ class Aplay extends EventEmitter
 
         args.push(filename);
 
-        if(alsadevice)
+        if (alsadevice)
         {
             args.push("-D");
             args.push(alsadevice);
